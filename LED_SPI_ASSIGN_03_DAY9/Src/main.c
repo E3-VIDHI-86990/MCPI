@@ -51,7 +51,7 @@ int main(void) {
 		 {
 		     LedOff(LED_GREEN_PIN);
 		 }
-		 if (val.x >= -3000)
+		 if (val.x <= -3000)
 				 {
 					 LedOn(LED_RED_PIN);
 				 }
@@ -67,7 +67,7 @@ int main(void) {
 	   {
 			LedOff(LED_BLUE_PIN);
 	   }
-		if (val.y >= -3000)
+		if (val.y <= -3000)
 		{
 	      LedOn(LED_ORANGE_PIN);
 		}

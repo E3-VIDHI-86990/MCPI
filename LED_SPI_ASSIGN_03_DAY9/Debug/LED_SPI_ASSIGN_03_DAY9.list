@@ -584,11 +584,11 @@ int main(void) {
  80004e4:	200c      	movs	r0, #12
  80004e6:	f7ff ffc1 	bl	800046c <LedOff>
 		 }
-		 if (val.x >= -3000)
+		 if (val.x <= -3000)
  80004ea:	f9b7 3000 	ldrsh.w	r3, [r7]
  80004ee:	4a12      	ldr	r2, [pc, #72]	@ (8000538 <main+0xa0>)
  80004f0:	4293      	cmp	r3, r2
- 80004f2:	db03      	blt.n	80004fc <main+0x64>
+ 80004f2:	da03      	bge.n	80004fc <main+0x64>
 				 {
 					 LedOn(LED_RED_PIN);
  80004f4:	200e      	movs	r0, #14
@@ -618,11 +618,11 @@ int main(void) {
  8000516:	200f      	movs	r0, #15
  8000518:	f7ff ffa8 	bl	800046c <LedOff>
 	   }
-		if (val.y >= -3000)
+		if (val.y <= -3000)
  800051c:	f9b7 3002 	ldrsh.w	r3, [r7, #2]
  8000520:	4a05      	ldr	r2, [pc, #20]	@ (8000538 <main+0xa0>)
  8000522:	4293      	cmp	r3, r2
- 8000524:	db03      	blt.n	800052e <main+0x96>
+ 8000524:	da03      	bge.n	800052e <main+0x96>
 		{
 	      LedOn(LED_ORANGE_PIN);
  8000526:	200d      	movs	r0, #13
@@ -637,7 +637,7 @@ int main(void) {
 		if(LIS_IsDataAvail())
  8000534:	e7c3      	b.n	80004be <main+0x26>
  8000536:	bf00      	nop
- 8000538:	fffff448 	.word	0xfffff448
+ 8000538:	fffff449 	.word	0xfffff449
 
 0800053c <SPI_Init>:
 Date: Sep 25, 2024
